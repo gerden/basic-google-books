@@ -1,0 +1,63 @@
+@use "style";
+
+.bookArrayArea {
+  margin: style.$basicMarginWidth;
+  display: grid;
+  @media only screen and (max-width: style.$oneColumMaxWidth) {
+    grid-template-columns: 100%;
+  }
+
+  @media only screen and (min-width: (style.$oneColumMaxWidth + 1)) {
+    grid-template-columns: 50% 50%;
+  }
+  grid-template-columns: 50% 50%;
+  &--extraDetail {
+    grid-template-columns: 100%;
+  }
+  &__bookInfo {
+    background-color: style.$bookAreabackgroundColor;
+    margin: style.$basicMarginWidth;
+    padding: style.$basicPaddingWidth;
+
+    @media only screen and (min-width: style.$pictureOnSideMinWidth) {
+      display: flex;
+    }
+  }
+}
+.bookInfo {
+  &__pictureBox {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.pictureBox {
+  &__picture {
+    height: style.$pictureHeight;
+    width: style.$pictureWidth;
+    border: 2px solid black;
+    align-self: flex-end;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__text {
+    color: white;
+  }
+  &__searchBar {
+    border-radius: 10px;
+  }
+  &__searchButton {
+    width: 50px;
+  }
+}
+
+body {
+  background-color: style.$pageBackgroundcolor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
