@@ -1,7 +1,8 @@
 async function bookArraySetup(searchText) {
   const searchURLStart = "https://www.googleapis.com/books/v1/volumes?q=";
+  const keyURL = "&:keyes&key=AIzaSyAOinMw14WBlPvyDUWNTgOMxhmlW5LNsKU";
   const fetchGoogleBookArray = await fetch(
-    `${searchURLStart}${searchText}${"&maxResults=20"}`
+    `${searchURLStart}${searchText}${keyURL}${"&maxResults=20"}`
   );
   const text = await fetchGoogleBookArray.json();
   return text.items;
